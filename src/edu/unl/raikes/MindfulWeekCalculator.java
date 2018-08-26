@@ -100,6 +100,6 @@ public class MindfulWeekCalculator {
 
 		System.out.println("\n\n");
 
-		System.out.println("There were " + leftOverHours + " hours unnaccounted for by our tool.");
+		System.out.println("There were " + leftOverHours + " hours unaccounted for by our tool.");
 	}
 }
