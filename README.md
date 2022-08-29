@@ -13,7 +13,8 @@ The program has a few bugs that need to be fixed. These bugs range from simple r
 ### PART 1: RUNTIME BUG (EXCEPTION)
 
 1.	**RUN THE PROGRAM:** Let’s run the program to see where things are. If all went well, the following (or something similar) should print in the Console:
-    ```Welcome to the Jeffrey S. Raikes School Mindful Week Calculator.
+    ```
+    Welcome to the Jeffrey S. Raikes School Mindful Week Calculator.
 
     Please answer the following questions as best you can. Feel free to enter estimates or 0 if the question is not applicable.
 
@@ -31,7 +32,8 @@ The program has a few bugs that need to be fixed. These bugs range from simple r
 
 ### PART 2: TYPE BUG
 1.	**RUN THE PROGRAM:** Now that the program seems to be running, let’s run it and see if anything else goes wrong when it runs. Follow the prompts and enter the information as desired. Once everything is entered you should get a report summary of your activities in the week. Wait a second, that doesn’t look right. Your mileage may vary but see below for what my input and output looked like. 
-    ```Please enter the number of hours you spend per week in class, studying, or working on homework: 20
+    ```
+    Please enter the number of hours you spend per week in class, studying, or working on homework: 20
     Please enter the average amount of time you take to eat a meal in minutes: 30
     Please enter the average amount of time you take to get ready in the morning in minutes: 30
     Please enter the average amount of hours per week you work: 10
