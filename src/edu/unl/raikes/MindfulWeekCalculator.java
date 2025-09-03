@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class MindfulWeekCalculator {
 
-	private static Scanner inputScanner;
+	private static Scanner inputScanner = new Scanner(System.in);
 
 	private static final int NUM_HOURS_IN_WEEK = 168;
 	private static final int NUM_MEALS_IN_WEEK = 21;
@@ -24,13 +24,13 @@ public class MindfulWeekCalculator {
 	public static void main(String args[]) {
 
 		// Declare variables.
-		int hoursStudying;
-		int hoursEating;
-		int hoursGettingReady;
-		int hoursWorking;
-		int hoursSleeping;
-		int hoursDigital;
-		int hoursActive;
+		double hoursStudying;
+		double hoursEating;
+		double hoursGettingReady;
+		double hoursWorking;
+		double hoursSleeping;
+		double hoursDigital;
+		double hoursActive;
 
 		// Get user input.
 
@@ -40,66 +40,66 @@ public class MindfulWeekCalculator {
 
 		System.out.print(
 				"Please enter the number of hours you spend per week in class, studying, or working on homework: ");
-		hoursStudying = inputScanner.nextInt();
+		hoursStudying = inputScanner.nextDouble();
 		System.out.println();
 
 		System.out.print("Please enter the average amount of time you take to eat a meal in minutes: ");
 		int numberOfMinutesForFood = inputScanner.nextInt();
-		hoursEating = numberOfMinutesForFood * NUM_MEALS_IN_WEEK / NUM_MINUTES_IN_HOUR;
+		hoursEating = (double) numberOfMinutesForFood * NUM_MEALS_IN_WEEK / NUM_MINUTES_IN_HOUR;
 		System.out.println();
 
 		System.out.print("Please enter the average amount of time you take to get ready in the morning in minutes: ");
 		int numberOfMinutesGettingReady = inputScanner.nextInt();
-		hoursGettingReady = numberOfMinutesGettingReady * NUM_DAYS_IN_WEEK;
+		hoursGettingReady = (double) numberOfMinutesGettingReady / NUM_MINUTES_IN_HOUR * NUM_DAYS_IN_WEEK;
 		System.out.println();
 
 		System.out.print("Please enter the average amount of hours per week you work: ");
-		hoursWorking = inputScanner.nextInt();
+		hoursWorking = inputScanner.nextDouble();
 		System.out.println();
 
 		System.out.print("Please enter the average amount of sleep you get per night in hours: ");
-		hoursSleeping = inputScanner.nextInt() * NUM_DAYS_IN_WEEK;
+		hoursSleeping = inputScanner.nextDouble() * NUM_DAYS_IN_WEEK;
 		System.out.println();
 
 		System.out.print(
 				"Please enter the average amount of time you spend doing sedentary tasks (tv, video games, etc) per week in hours: ");
-		hoursDigital = inputScanner.nextInt();
+		hoursDigital = inputScanner.nextDouble();
 		System.out.println();
 
 		System.out.print(
 				"Please enter the average amount of time you spend being active (sports, running, etc) in a week in hours: ");
-		hoursActive = inputScanner.nextInt();
+		hoursActive = inputScanner.nextDouble();
 		System.out.println();
 
 		// Calculate the report numbers.
-		int leftOverHours = NUM_HOURS_IN_WEEK - hoursStudying - hoursEating - hoursGettingReady - hoursWorking
+		double leftOverHours = NUM_HOURS_IN_WEEK - hoursStudying - hoursEating - hoursGettingReady - hoursWorking
 				- hoursSleeping - hoursDigital - hoursActive;
 
-		int percentStudying = hoursStudying / NUM_HOURS_IN_WEEK;
-		int percentEating = hoursEating / NUM_HOURS_IN_WEEK;
-		int percentGettingReady = hoursGettingReady / NUM_HOURS_IN_WEEK;
-		int percentWorking = hoursWorking / NUM_HOURS_IN_WEEK;
-		int percentSleeping = hoursSleeping / NUM_HOURS_IN_WEEK;
-		int percentSedentary = hoursDigital / NUM_HOURS_IN_WEEK;
-		int percentActive = hoursActive / NUM_HOURS_IN_WEEK;
-		int percentOther = leftOverHours / NUM_HOURS_IN_WEEK;
+		double percentStudying = (double) hoursStudying / NUM_HOURS_IN_WEEK*100;
+		double percentEating = (double) hoursEating / NUM_HOURS_IN_WEEK*100;
+		double percentGettingReady = (double) hoursGettingReady / NUM_HOURS_IN_WEEK*100;
+		double percentWorking = (double) hoursWorking / NUM_HOURS_IN_WEEK*100;
+		double percentSleeping = (double) hoursSleeping / NUM_HOURS_IN_WEEK*100;
+		double percentSedentary = (double) hoursDigital / NUM_HOURS_IN_WEEK*100;
+		double percentActive = (double) hoursActive / NUM_HOURS_IN_WEEK*100;
+		double percentOther = (double) leftOverHours / NUM_HOURS_IN_WEEK*100;
 
 		// Print Report.
 		System.out.println("\n\nYOUR MINDFULNESS REPORT:");
 		System.out.println("Here is how you spend your week...\n\n");
 
 		// Print different percentages.
-		System.out.println("STUDYING:                    " + percentStudying + "%");
-		System.out.println("EATING:                      " + percentEating + "%");
-		System.out.println("GETTING READY FOR THE DAY:   " + percentGettingReady + "%");
-		System.out.println("WORKING:                     " + percentWorking + "%");
-		System.out.println("SLEEPING:                    " + percentSleeping + "%");
-		System.out.println("DOING SEDENTARY THINGS:      " + percentSedentary + "%");
-		System.out.println("DOING ACTIVE THINGS:         " + percentActive + "%");
-		System.out.println("OTHER:                       " + percentOther + "%");
+		System.out.println("STUDYING:                    " + (int) percentStudying + "%");
+		System.out.println("EATING:                      " + (int) percentEating + "%");
+		System.out.println("GETTING READY FOR THE DAY:   " + (int) percentGettingReady + "%");
+		System.out.println("WORKING:                     " + (int) percentWorking + "%");
+		System.out.println("SLEEPING:                    " + (int) percentSleeping + "%");
+		System.out.println("DOING SEDENTARY THINGS:      " + (int) percentSedentary + "%");
+		System.out.println("DOING ACTIVE THINGS:         " + (int) percentActive + "%");
+		System.out.println("OTHER:                       " + (int) percentOther + "%");
 
 		System.out.println("\n\n");
 
-		System.out.println("There were " + leftOverHours + " hours unaccounted for by our tool.");
+		System.out.println("There were " + (int) leftOverHours + " hours unaccounted for by our tool.");
 	}
 }
