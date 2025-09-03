@@ -75,6 +75,7 @@ public class MindfulWeekCalculator {
 		double leftOverHours = NUM_HOURS_IN_WEEK - hoursStudying - hoursEating - hoursGettingReady - hoursWorking
 				- hoursSleeping - hoursDigital - hoursActive;
 
+
 		double percentStudying = (double) hoursStudying / NUM_HOURS_IN_WEEK*100;
 		double percentEating = (double) hoursEating / NUM_HOURS_IN_WEEK*100;
 		double percentGettingReady = (double) hoursGettingReady / NUM_HOURS_IN_WEEK*100;
